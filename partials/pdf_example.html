@@ -4,6 +4,7 @@
     <link href="prism.css" rel="stylesheet">
   </head>
   <body style="background-color:white;" >
+	
 	<div class="topcoat-navigation-bar" ng-controller="HomeCtrl">
 	  <div class="topcoat-navigation-bar__item left quarter">
 		<a class="topcoat-icon-button--quiet" ng-click="slidePage('/','modal')">
@@ -11,36 +12,27 @@
 		</a>
 	  </div>
 	  <div class="topcoat-navigation-bar__item center half">
-		<h1 class="topcoat-navigation-bar__title">Color Room</h1>
+		<h1 class="topcoat-navigation-bar__title">Cake</h1>
 	  </div>
 	</div>
-	
 	
 	<script type="text/javascript" src="prism.js"></script>
 
 	<pre  ng-prism  class="language-python"><code>
 		
 
+""" OCR that converts images to text """
+
+from pytesseract import image_to_string
+from PIL import Image
+
+print image_to_string(Image.open('/Users/williamliu/Desktop/Screen Shot 2014-09-27 at 11.45.34 PM.png'))
+
+#print image_to_string(Image.open('/Users/williamliu/Desktop/Screen Shot 2014-09-27 at 11.45.34 PM.png'))
+#print image_to_string(Image.open('test-european.jpg'), lang='fra')
 
 
 
-
-
-
-T = int(input("Enter the number of test"))
-
-for x in range(T):
-	rooms = int(input("Enter the number of rooms"))
-	S = input("Enter the string of the colors in the rooms")
-	R = S.count('R')
-	G = S.count('G')
-	B = S.count('B')
-	number = len(S) - max(R, G, B)
-	print(number)
-	
-	
-	
         </code></pre>
   </body>
 </html>		
-	
