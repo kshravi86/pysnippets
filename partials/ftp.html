@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="prism.css" rel="stylesheet">
+  </head>
+  <body style="background-color:white;" >
+	
+	<div class="topcoat-navigation-bar" ng-controller="HomeCtrl">
+	  <div class="topcoat-navigation-bar__item left quarter">
+		<a class="topcoat-icon-button--quiet" ng-click="slidePage('/','modal')">
+		  <span class="topcoat-icon home-icon"></span>
+		</a>
+	  </div>
+	  <div class="topcoat-navigation-bar__item center half">
+		<h1 class="topcoat-navigation-bar__title">Cake</h1>
+	  </div>
+	</div>
+	
+	<script type="text/javascript" src="prism.js"></script>
+
+	<pre  ng-prism  class="language-python"><code>
+	
+
+
+
+
+# Store all files in a local directory to a server
+# using FTP
+
+from ftplib import FTP
+import os
+
+# ftp settings
+settings = {
+    'ftp': {
+        'url': 'ftp.some-server.com',
+        'username': 'your-account-name',
+        'password': 'your-password',
+        'remote-directory': '/path/to/files'
+    }
+}
+
+# local paths
+paths = {
+   'local-directory': 'my-files/'
+}
+
+# list of local files
+files = os.listdir(paths['local-directory'])
+
+# connect and store
+for f in files:
+    ftp = FTP(settings['ftp']['url'])
+    ftp.login(settings['ftp']['username'], settings['ftp']['password'])
+    ftp.cwd(settings['ftp']['remote-directory'])
+    ftp.storbinary('STOR ' + f, open(paths['local-directory'] + f, 'rb'))
+    ftp.close()
+    
+    
+    
+        </code></pre>
+  </body>
+</html>		
