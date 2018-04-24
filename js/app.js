@@ -79,6 +79,7 @@ var myApp = angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.d
 		$routeProvider.when("/view64",{templateUrl:'partials/ftp.html'});
 		$routeProvider.when("/view65",{templateUrl:'partials/ord.html'});
 		$routeProvider.when("/view66",{templateUrl:'partials/excel.html'});
+		$routeProvider.when("/view67",{templateUrl:'partials/pipupgrade.html'});
 		
 		$routeProvider.otherwise({redirectTo: '/'});
   }]);
