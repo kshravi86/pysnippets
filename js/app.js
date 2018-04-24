@@ -78,6 +78,7 @@ var myApp = angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.d
 		$routeProvider.when("/view63",{templateUrl:'partials/pdf_example.html'});
 		$routeProvider.when("/view64",{templateUrl:'partials/ftp.html'});
 		$routeProvider.when("/view65",{templateUrl:'partials/ord.html'});
+		$routeProvider.when("/view66",{templateUrl:'partials/excel.html'});
 		
 		$routeProvider.otherwise({redirectTo: '/'});
   }]);
